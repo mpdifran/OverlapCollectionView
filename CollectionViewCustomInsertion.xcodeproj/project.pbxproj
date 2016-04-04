@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		FF49FE371CB186D300172536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF49FE361CB186D300172536 /* AppDelegate.swift */; };
-		FF49FE391CB186D300172536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF49FE381CB186D300172536 /* ViewController.swift */; };
 		FF49FE3C1CB186D300172536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF49FE3A1CB186D300172536 /* Main.storyboard */; };
 		FF49FE3E1CB186D300172536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF49FE3D1CB186D300172536 /* Assets.xcassets */; };
 		FF49FE411CB186D300172536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF49FE3F1CB186D300172536 /* LaunchScreen.storyboard */; };
+		FF49FE491CB1871F00172536 /* OverlapCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF49FE481CB1871F00172536 /* OverlapCollectionViewController.swift */; };
+		FF49FE4B1CB1874F00172536 /* OverlapCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF49FE4A1CB1874F00172536 /* OverlapCollectionViewLayout.swift */; };
+		FF49FE4D1CB18CC100172536 /* OverlapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF49FE4C1CB18CC100172536 /* OverlapCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FF49FE331CB186D200172536 /* CollectionViewCustomInsertion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewCustomInsertion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF49FE361CB186D300172536 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FF49FE381CB186D300172536 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FF49FE3B1CB186D300172536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF49FE3D1CB186D300172536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF49FE401CB186D300172536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF49FE421CB186D300172536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF49FE481CB1871F00172536 /* OverlapCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlapCollectionViewController.swift; sourceTree = "<group>"; };
+		FF49FE4A1CB1874F00172536 /* OverlapCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlapCollectionViewLayout.swift; sourceTree = "<group>"; };
+		FF49FE4C1CB18CC100172536 /* OverlapCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlapCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +59,12 @@
 			isa = PBXGroup;
 			children = (
 				FF49FE361CB186D300172536 /* AppDelegate.swift */,
-				FF49FE381CB186D300172536 /* ViewController.swift */,
+				FF49FE481CB1871F00172536 /* OverlapCollectionViewController.swift */,
+				FF49FE4A1CB1874F00172536 /* OverlapCollectionViewLayout.swift */,
+				FF49FE4C1CB18CC100172536 /* OverlapCollectionViewCell.swift */,
 				FF49FE3A1CB186D300172536 /* Main.storyboard */,
-				FF49FE3D1CB186D300172536 /* Assets.xcassets */,
 				FF49FE3F1CB186D300172536 /* LaunchScreen.storyboard */,
+				FF49FE3D1CB186D300172536 /* Assets.xcassets */,
 				FF49FE421CB186D300172536 /* Info.plist */,
 			);
 			path = CollectionViewCustomInsertion;
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF49FE391CB186D300172536 /* ViewController.swift in Sources */,
+				FF49FE491CB1871F00172536 /* OverlapCollectionViewController.swift in Sources */,
+				FF49FE4B1CB1874F00172536 /* OverlapCollectionViewLayout.swift in Sources */,
+				FF49FE4D1CB18CC100172536 /* OverlapCollectionViewCell.swift in Sources */,
 				FF49FE371CB186D300172536 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
