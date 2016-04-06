@@ -25,4 +25,10 @@ class OverlapCollectionViewCell: UICollectionViewCell {
         layer.borderWidth = 3
         layer.borderColor = UIColor.blackColor().CGColor
     }
+
+    /// Commenting out the below method results in cell insertions occurring at an improper index. It appears that the
+    /// collection view is not setting the zIndex on the cell properly.
+    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
+        layer.zPosition = CGFloat(layoutAttributes.zIndex)
+    }
 }
