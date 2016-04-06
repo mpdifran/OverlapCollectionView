@@ -15,26 +15,11 @@ class OverlapCollectionViewLayout: UICollectionViewLayout {
     private let centerDiff: CGFloat = 40
     private var numberOfItems = 0
 
-    private var layoutAttributes = [UICollectionViewLayoutAttributes]()
     private var updateItems = [UICollectionViewUpdateItem]()
 
     override func prepareLayout() {
         super.prepareLayout()
         numberOfItems = collectionView?.numberOfItemsInSection(0) ?? 0
-
-        layoutAttributes.removeAll(keepCapacity: true)
-        for itemIndex in 0..<numberOfItems {
-            let indexPath = NSIndexPath(forItem: itemIndex, inSection: 0)
-            let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
-
-            attributes.size = preferredSize
-            let centerX = preferredSize.width / 2.0 + CGFloat(itemIndex) * centerDiff
-            let centerY = collectionView!.bounds.height / 2.0
-            attributes.center = CGPointMake(centerX, centerY)
-            attributes.zIndex = itemIndex
-
-            layoutAttributes.append(attributes)
-        }
     }
 
     override func prepareForCollectionViewUpdates(updateItems: [UICollectionViewUpdateItem]) {
@@ -57,11 +42,24 @@ class OverlapCollectionViewLayout: UICollectionViewLayout {
     }
 
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        return layoutAttributes.filter { CGRectIntersectsRect(rect, $0.frame) }
+        var allAttributes = [UICollectionViewLayoutAttributes]()
+        for index in 0 ..< numberOfItems {
+            let indexPath = NSIndexPath(forItem: index, inSection: 0)
+            allAttributes.append(layoutAttributesForItemAtIndexPath(indexPath)!)
+        }
+        return allAttributes
     }
 
     override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
-        return layoutAttributes[indexPath.item]
+        let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+
+        attributes.size = preferredSize
+        let centerX = preferredSize.width / 2.0 + CGFloat(indexPath.item) * centerDiff
+        let centerY = collectionView!.bounds.height / 2.0
+        attributes.center = CGPointMake(centerX, centerY)
+        attributes.zIndex = indexPath.item
+
+        return attributes
     }
 
     override func initialLayoutAttributesForAppearingItemAtIndexPath(itemIndexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
